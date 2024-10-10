@@ -1,6 +1,11 @@
 #!/bin/bash
 sleep 1
 
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun
+cat /dev/net/tun
+
 cd /home/container
 
 # Make internal Docker IP address available to processes.
